@@ -1,4 +1,8 @@
 import { motion } from "framer-motion";
+import javaSpringBootCert from "../../assets/Mastering Java + SpringBoot.png";
+import cdacCert from "../../assets/cdac.png";
+import csharpCert from "../../assets/Foundational CSharp with Microsoft.png";
+import btechCert from "../../assets/btech.png";
 
 // Dummy certificate data for the skeletons
 const certificates = [
@@ -6,25 +10,25 @@ const certificates = [
     id: 1,
     title: "Java + Springboot Masterclass",
     issuer: "Udemy",
-    image: "/Mastering Java + SpringBoot.png",
+    image: javaSpringBootCert,
   },
   {
     id: 2,
     title: "Full Stack Developer",
     issuer: "CDAC Hyderabad",
-    image: "/cdac.png",
+    image: cdacCert,
   },
   {
     id: 3,
     title: "Foundational C# with Microsoft",
     issuer: "FreeCodeCamp",
-    image: "/Foundational CSharp with Microsoft.png",
+    image: csharpCert,
   },
   {
     id: 4,
     title: "Computer Science Engineering",
     issuer: "Bhilai Institute of Technology Durg",
-    image: "/btech.png",
+    image: btechCert,
   },
 ];
 
