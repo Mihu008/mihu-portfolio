@@ -2,17 +2,19 @@ import { motion } from "framer-motion";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { FaJava, FaReact, FaNodeJs, FaGithub, FaDocker } from "react-icons/fa6";
 import { SiJavascript, SiPostgresql, SiSpringboot, SiMongodb, SiMysql, SiPostman, SiNotion } from "react-icons/si";
+import nexusImg from "../../assets/nexus.png";
 
 // Dummy project data
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-stack digital storefront with secure payments and real-time inventory management.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=800&auto=format&fit=crop",
+    title: "Nexus AI",
+    description: "Advanced AI orchestration system enabling autonomous agents, contextual memory, and extensible tool pipelines.",
+    image: nexusImg,
     liveLink: "#",
-    githubLink: "#",
-    tags: ["React", "Stripe", "Node.js"],
+    githubLink: "https://github.com/Mihu008/nexus-frontend",
+    tags: ["React", "Java", "PostgreSQL","Docker"],
+    objectFit: "object-cover object-left-top",
   },
   {
     id: 2,
@@ -102,7 +104,7 @@ const ProjectSection = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal"
+                  className={`w-full h-full ${project.objectFit || "object-cover"} transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal`}
                   loading="lazy"
                 />
                 
@@ -140,9 +142,9 @@ const ProjectSection = () => {
 
                 {/* Tech Tags */}
                 <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-blue-900/50">
-                  {project.tags.map((tag) => (
+                  {project.tags.map((tag, tagIdx) => (
                     <span 
-                      key={tag} 
+                      key={`${project.id}-${tag}-${tagIdx}`} 
                       className="text-xs font-mono text-gray-400 bg-[#111] px-2 py-1 border border-gray-800"
                     >
                       {tag}
@@ -279,9 +281,9 @@ const ProjectSection = () => {
           </p>
 
           <div className="w-full border-t border-l border-blue-900/50 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
-            {techStack.map((tech) => (
+            {techStack.map((tech, idx) => (
               <div 
-                key={tech.name} 
+                key={`${tech.name}-${idx}`} 
                 className="aspect-square p-4 sm:p-6 border-b border-r border-blue-900/50 flex flex-col justify-between group hover:bg-white/5 transition-colors"
               >
                 <div className="flex justify-start">

@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react"
 import Header from "./features/navigation/Header"
+import ScrollToTop from "./features/navigation/ScrollToTop"
 
 const HeroSection = lazy(() => import("./features/home/HeroSection"));
 const AboutSection = lazy(() => import("./features/home/AboutSection"));
@@ -18,7 +19,8 @@ export default function App() {
         <CertificatesSection />
         <ContactSection />
       </Suspense>
-
+      <ScrollToTop />
     </>
   )
 }
+
