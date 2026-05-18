@@ -28,9 +28,4 @@ dist-ssr
 .env.local
 
 # Public
-public/*
-btech.png
-cdac.png
-Mastering Java + SpringBoot.png
-Foundational CSharp with Microsoft.png
-MIHIR_Resume.pdf
+# public/*
