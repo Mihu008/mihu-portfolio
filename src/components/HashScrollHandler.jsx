@@ -9,7 +9,10 @@ export default function HashScrollHandler() {
   useEffect(() => {
     const handleHash = () => {
       const sectionId = window.location.hash.replace("#", "");
-      if (!sectionId) return;
+      if (!sectionId) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
       ensureMounted(sectionId);
       scrollToSection(sectionId);
     };

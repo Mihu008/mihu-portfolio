@@ -3,6 +3,7 @@ import { FaJava, FaReact, FaNodeJs, FaGithub, FaDocker } from "react-icons/fa6";
 import { SiJavascript, SiPostgresql, SiSpringboot, SiMongodb, SiMysql, SiPostman, SiNotion } from "react-icons/si";
 import Reveal from "../../components/Reveal";
 import nexusImg from "../../assets/optimized/nexus.webp";
+import checklistImg from "../../assets/optimized/Checklist.webp";
 
 const projects = [
   {
@@ -18,13 +19,12 @@ const projects = [
   },
   {
     id: 2,
-    title: "Portfolio Template",
-    description: "A highly customizable, responsive portfolio template built for developers and designers.",
-    image:
-      "https://images.unsplash.com/photo-1507238692062-8b0feae40f6b?q=75&w=480&auto=format&fit=crop",
+    title: "Checklist Delegation System",
+    description: "A multi-layer task delegation engine built for team workflows. Supports hierarchical task assignment, deadline tracking, and role-based access control with JWT-secured REST APIs.",
+    image: checklistImg,
     liveLink: "#",
     githubLink: "#",
-    tags: ["Tailwind", "Framer", "Vite"],
+    tags: ["Node.js", "React.js", "PostgreSQL", "JWT", "Tailwind", "RBAC"],
   },
   {
     id: 3,
