@@ -149,12 +149,12 @@ const ProjectSection = () => {
             <h3 className="text-white text-2xl font-bold tracking-tight">1. Back-End Development</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8 text-[#a0a0a0] font-mono text-sm md:text-base leading-relaxed">
               {[
-                "API Design & Development",
-                "Server-Side Business Logic",
-                "Performance & caching strategies",
-                "Error handling & logging",
-                "Deployment & environment configuration",
-                "Third-party integrations",
+                "RESTful & GraphQL API Architecture",
+                "Microservices Orchestration & Event-Driven Systems",
+                "Database Optimization & Distributed Caching",
+                "Scalable System Design & Low-Latency Processing",
+                "Security Compliance (OAuth2, JWT, Spring Security)",
+                "Deployment & CI/CD Pipeline Setup",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
                   <span className="text-gray-500 mt-1">•</span>
@@ -168,11 +168,11 @@ const ProjectSection = () => {
             <h3 className="text-white text-2xl font-bold tracking-tight">2. Front-End Development</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8 text-[#a0a0a0] font-mono text-sm md:text-base leading-relaxed">
               {[
-                "HTML5 / CSS3 / JavaScript",
-                "Tailwind CSS or Bootstrap",
+                "Modern JavaScript (ES6+) & TypeScript",
+                "Reusable Component Design Patterns",
                 "Web animations & transitions",
-                "Responsive layout using Flexbox & Grid",
-                "React.js / Vue.js integration",
+                "Core Web Vitals & Frontend Performance Tuning",
+                "State Management (Redux/Zustand) & React Hooks",
                 "Cross-browser compatibility",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
@@ -188,25 +188,25 @@ const ProjectSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8 text-[#a0a0a0] font-mono text-sm md:text-base leading-relaxed">
               <div className="flex items-start gap-3">
                 <span className="text-gray-500 mt-1">•</span>
-                <span>Framer development</span>
+                <span>Figma → Code Conversion</span>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-gray-500 mt-1">•</span>
-                <span>Clean, scalable, maintainable code</span>
+                <span>SOLID Principles & Clean Architecture</span>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-gray-500 mt-1">•</span>
-                <span className="border border-[#7e57c2] px-3 py-1 bg-[#2a1a4a]/30 text-blue-100">SEO-ready structure</span>
+                <span className="border border-[#7e57c2] px-3 py-1 bg-[#2a1a4a]/30 text-blue-100">Server-Side Rendering (SSR) & Next.js Optimization</span>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-gray-500 mt-1">•</span>
-                <span>Mobile & tablet optimization</span>
+                <span>Serverless Architecture & Edge Computing Deployment</span>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-gray-500 mt-1">•</span>
                 <span>
-                  Asset optimization for{" "}
-                  <span className="border-b-2 border-fuchsia-500 text-white pb-0.5">performance</span>
+                  Automated Testing & {" "}
+                  <span className="border-b-2 border-fuchsia-500 text-white pb-0.5">CI/CD Pipelines</span>
                 </span>
               </div>
             </div>
