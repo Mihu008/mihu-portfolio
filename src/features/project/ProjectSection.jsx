@@ -13,7 +13,7 @@ const projects = [
     description:
       "Advanced AI orchestration system enabling autonomous agents, contextual memory, and extensible tool pipelines.",
     image: nexusImg,
-    liveLink: "#",
+    liveLink: "https://nexus-ai-mihu.vercel.app/",
     githubLink: "https://github.com/Mihu008/nexus-frontend",
     tags: ["React", "Java", "PostgreSQL", "Docker"],
     objectFit: "object-cover object-left-top",
