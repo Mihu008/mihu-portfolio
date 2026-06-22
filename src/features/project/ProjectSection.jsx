@@ -4,6 +4,7 @@ import { SiJavascript, SiPostgresql, SiSpringboot, SiMongodb, SiMysql, SiPostman
 import Reveal from "../../components/Reveal";
 import nexusImg from "../../assets/optimized/nexus.webp";
 import checklistImg from "../../assets/optimized/Checklist.webp";
+import whatsappImg from "../../assets/optimized/whatsapp.webp";
 
 const projects = [
   {
@@ -28,13 +29,12 @@ const projects = [
   },
   {
     id: 3,
-    title: "Task Management App",
-    description: "A collaborative Kanban board application with drag-and-drop functionality and team roles.",
-    image:
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=75&w=480&auto=format&fit=crop",
+    title: "WhatsApp Tracking System",
+    description: "A real-time business tracking system, with features like live tracking, automated messages, and reports.",
+    image: whatsappImg,
     liveLink: "#",
     githubLink: "#",
-    tags: ["React", "Redux", "Firebase"],
+    tags: ["Next.js", "Tailwind", "Supabase", "Meta Business", "Zustand", "Typescript"],
   },
   {
     id: 4,

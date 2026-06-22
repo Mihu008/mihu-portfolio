@@ -1,9 +1,8 @@
 import { FiDownload } from "react-icons/fi";
 import { FaLinkedinIn, FaXTwitter, FaInstagram } from "react-icons/fa6";
 import Reveal from "../../components/Reveal";
+import Me from "../../assets/optimized/me.webp"
 
-const PROFILE_IMG =
-  "https://images.unsplash.com/photo-1544717302-de2939b7ef71?q=75&w=600&auto=format&fit=crop";
 
 const AboutSection = () => {
   return (
@@ -43,6 +42,7 @@ const AboutSection = () => {
 
           <a
             href="/MIHIR_Resume.pdf"
+            download="MIHIR_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-between w-[200px] bg-[#1a1a1a] hover:bg-[#222] text-white font-mono text-sm font-semibold transition-colors border border-gray-800 mb-16 group"
@@ -55,7 +55,7 @@ const AboutSection = () => {
 
           <div className="w-full max-w-xl">
             <p className="text-gray-500 font-mono mb-6 text-sm md:text-base">
-              &lt;!-- In a previous life --&gt;
+              &lt;!-- My Professional Experience --&gt;
             </p>
 
             <div className="flex flex-row gap-8 sm:gap-16 font-mono text-sm md:text-base">
@@ -81,7 +81,7 @@ const AboutSection = () => {
           <div className="w-full flex flex-col shadow-2xl border border-blue-500/30">
             <div className="w-full aspect-[4/5] bg-[#1e443b] overflow-hidden relative">
               <img
-                src={PROFILE_IMG}
+                src={Me}
                 alt="Profile Portrait"
                 className="w-full h-full object-cover opacity-80"
                 loading="lazy"
