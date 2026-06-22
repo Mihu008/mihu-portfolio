@@ -1,7 +1,7 @@
 import { FiDownload } from "react-icons/fi";
 import { FaLinkedinIn, FaXTwitter, FaInstagram } from "react-icons/fa6";
 import Reveal from "../../components/Reveal";
-import Me from "../../assets/optimized/me.webp"
+import Me from "../../assets/optimized/Me.webp"
 
 
 const AboutSection = () => {
