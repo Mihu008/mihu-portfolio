@@ -1,9 +1,10 @@
+import logoImg from "../../assets/LOGO.png";
 import { FiGithub, FiLinkedin, FiInstagram, FiMenu, FiX } from "react-icons/fi";
+import { useState } from "react";
+import { useNavScroll } from "../../hooks/useNavScroll";
+import ContactModal3D from "../../components/ContactModal3D";
 
 const INSTAGRAM_URL = "https://instagram.com/mihu_singh.07?igsh=bjhndjl4bHB2MTVx";
-import { useState, useRef } from "react";
-import { useNavScroll } from "../../hooks/useNavScroll";
-
 const NAV_ITEMS = ["Home", "About", "Project", "Certificates", "Contact"];
 
 const Header = () => {
@@ -20,32 +21,15 @@ const Header = () => {
   const openContactForm = () => setContactFormOpen(true);
   const closeContactForm = () => setContactFormOpen(false);
 
-  const form = useRef();
-
-  const sendEmail = async (e) => {
-    e.preventDefault();
-
-    const emailjs = await import("@emailjs/browser");
-    emailjs.default
-      .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        form.current,
-        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
-      )
-      .then(
-        () => closeContactForm(),
-        (error) => console.error("Email send failed:", error.text)
-      );
-  };
-
   return (
     <header className="absolute w-full z-50 transition-all duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
         <div className="header-animate-in flex items-center">
-          <div className="h-10 w-10 rounded-xl bg-gradient-to-r from-gray-500 to-gray-100 flex items-center justify-center text-cyan-600 front-bold text-xl mr-3">
-            M
-          </div>
+          <img
+            src={logoImg}
+            alt="Mihir Logo"
+            className="h-10 w-10 rounded-xl object-contain mr-3 shadow-[0_0_15px_rgba(6,182,212,0.3)] border border-cyan-500/30"
+          />
           <span className="text-xl font-bold font-mono bg-gradient-to-r from-gray-300 to-gray-100 bg-clip-text text-transparent">
             Mihir
           </span>
@@ -167,73 +151,7 @@ const Header = () => {
         </div>
       </div>
 
-      {contactFormOpen && (
-        <div
-          className="contact-overlay fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
-          role="dialog"
-          aria-modal="true"
-        >
-          <div className="contact-panel bg-white dark:bg-gray-800 rounded-xl shadow-xl w-full max-w-md p-6">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-bold text-gray-300">Get in Touch</h2>
-              <button type="button" onClick={closeContactForm} aria-label="Close form">
-                <FiX className="w-5 h-5 text-gray-300 font-extrabold" />
-              </button>
-            </div>
-
-            <form ref={form} onSubmit={sendEmail} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="user_name"
-                  id="name"
-                  required
-                  placeholder="Your Name"
-                  className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="user_email"
-                  id="email"
-                  required
-                  placeholder="Your Email"
-                  className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  required
-                  rows="4"
-                  placeholder="How can I help you?"
-                  className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white resize-none"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 rounded-lg shadow-md hover:shadow-lg hover:shadow-blue-600/50 active:scale-[0.98]"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
+      <ContactModal3D isOpen={contactFormOpen} onClose={closeContactForm} />
     </header>
   );
 };

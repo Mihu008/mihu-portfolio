@@ -4,6 +4,7 @@ import ScrollToTop from "./features/navigation/ScrollToTop"
 import LazySection from "./components/LazySection"
 import HashScrollHandler from "./components/HashScrollHandler"
 import GlobalBackground3D from "./components/GlobalBackground3D"
+import InitialLoader3D from "./components/InitialLoader3D"
 import { SectionMountProvider } from "./context/SectionMountProvider"
 
 const HeroSection = lazy(() => import("./features/home/HeroSection"));
@@ -19,6 +20,7 @@ const HeroFallback = () => (
 export default function App() {
   return (
     <SectionMountProvider>
+      <InitialLoader3D />
       <HashScrollHandler />
       {/* Global Continuous Three.js 3D Background */}
       <GlobalBackground3D />

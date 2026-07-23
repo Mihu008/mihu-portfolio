@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
+import { useNavScroll } from "../../hooks/useNavScroll";
 
 const TITLES = [
-  "Full Stack Engineer · Backend Architect",
+  "Full Stack Developer · Backend Architect",
   "AI Systems Builder · Backend Engineer",
-  "Backend Engineer · Automation & API Systems",
+  "Backend Developer · Automation & API Systems",
+  "Frontend Developer · UI/UX Designer"
 ];
 
 const HeroSection = () => {
+  const { navigateToSection, prefetchOnHover } = useNavScroll();
   const [typedText, setTypedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
@@ -55,7 +58,7 @@ const HeroSection = () => {
           {/* Subheading / Status Badge */}
           <div className="hero-fade-up hero-delay-1 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs font-mono mb-6">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            <span>AI Systems & Backend Architecture</span>
+            <span>Backend Developer</span>
           </div>
 
           {/* Name Header */}
@@ -85,12 +88,18 @@ const HeroSection = () => {
           <div className="hero-fade-up hero-delay-2 flex flex-wrap items-center justify-center gap-4">
             <a
               href="#project"
+              onClick={(e) => navigateToSection(e, "project")}
+              onMouseEnter={() => prefetchOnHover("project")}
+              onFocus={() => prefetchOnHover("project")}
               className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-medium text-sm transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5"
             >
               Explore Projects
             </a>
             <a
               href="#contact"
+              onClick={(e) => navigateToSection(e, "contact")}
+              onMouseEnter={() => prefetchOnHover("contact")}
+              onFocus={() => prefetchOnHover("contact")}
               className="px-6 py-3 rounded-xl bg-slate-900/80 hover:bg-slate-800/80 border border-blue-500/30 hover:border-cyan-400/50 text-blue-200 font-medium text-sm transition-all duration-300 backdrop-blur-sm hover:-translate-y-0.5"
             >
               Get in Touch
