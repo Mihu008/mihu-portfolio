@@ -8,14 +8,14 @@ export default defineConfig({
     chunkSizeWarningLimit: 1500,
     modulePreload: {
       resolveDependencies(_filename, deps) {
-        return deps.filter((dep) => !dep.includes('spline-vendor'));
+        return deps.filter((dep) => !dep.includes('three-vendor'));
       },
     },
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes('@splinetool')) {
-            return 'spline-vendor';
+          if (id.includes('three') || id.includes('@react-three')) {
+            return 'three-vendor';
           }
           if (id.includes('@emailjs')) {
             return 'emailjs';

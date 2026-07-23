@@ -62,7 +62,20 @@ body {
   animation-delay: 0.65s;
 }
 
-/* Hero Spline — keep model inside viewport on all breakpoints */
+@keyframes bounce-short {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-bounce-short {
+  animation: bounce-short 1.8s ease-in-out infinite;
+}
+
+/* Hero 3D Canvas container */
 .hero-spline-container {
   isolation: isolate;
 }
@@ -75,53 +88,12 @@ body {
   overflow: hidden;
   pointer-events: auto;
   touch-action: manipulation;
-  cursor: grab;
 }
 
-.hero-spline-canvas:active {
-  cursor: grabbing;
-}
-
-/* Center and scale Spline canvas within the box */
-.hero-spline-canvas > div,
-.hero-spline-canvas canvas {
-  position: absolute !important;
-  inset: 0 !important;
+.hero-spline-container canvas {
   width: 100% !important;
   height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  pointer-events: auto !important;
   touch-action: manipulation;
-}
-
-/* Mobile: nudge scene down so cubes sit below the header */
-@media (max-width: 1023px) {
-  .hero-spline-container .hero-spline-canvas > div {
-    transform: scale(0.92) translateY(6%);
-    transform-origin: center center;
-  }
-}
-
-/* Desktop: keep cluster inside the right column, no horizontal spill */
-@media (min-width: 1024px) {
-  .hero-spline-container .hero-spline-canvas > div {
-    transform: scale(0.92);
-    transform-origin: 72% 50%;
-  }
-}
-
-@media (min-width: 1280px) {
-  .hero-spline-container .hero-spline-canvas > div {
-    transform: scale(1);
-    transform-origin: 68% 50%;
-  }
-}
-
-/* Hide Spline branding badge */
-.hero-spline-container a[href*="spline.design"],
-.hero-spline-container a[href*="splinetool"] {
-  display: none !important;
 }
 
 /* Lightweight 3D fallback when Spline is skipped or loading */

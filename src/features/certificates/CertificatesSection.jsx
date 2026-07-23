@@ -35,27 +35,33 @@ const CertificatesSection = () => {
   return (
     <section
       id="certificates"
-      className="min-h-[70vh] bg-gradient-to-b from-black to-blue-900 py-24 lg:px-24 md:px-10 px-4 relative overflow-hidden"
+      className="min-h-[70vh] py-24 lg:px-24 md:px-10 px-4 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center">
+        {/* Section Header */}
         <Reveal className="text-center mb-16">
-          <p className="text-gray-500 font-mono mb-4 text-sm md:text-base">
-            &lt;!-- Continuous learning --&gt;
-          </p>
-          <h2 className="text-white text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight">
-            My <span className="text-blue-300">Certificates</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs font-mono mb-4">
+            <span className="w-2 h-2 rounded-full bg-cyan-400" />
+            <span>&lt;!-- Credentials & Degrees --&gt;</span>
+          </div>
+          <h2 className="text-white text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
+            My{" "}
+            <span className="bg-gradient-to-r from-blue-300 via-cyan-200 to-blue-400 bg-clip-text text-transparent">
+              Certificates
+            </span>
           </h2>
         </Reveal>
 
+        {/* Certificate Cards Grid */}
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
           {certificates.map((cert, index) => (
             <Reveal key={cert.id} delay={index * 80}>
-              <article className="bg-black/40 border border-blue-900/50 shadow-2xl flex flex-col group hover:border-blue-500/50 transition-colors duration-300 overflow-hidden">
-                <div className="w-full aspect-[4/3] relative overflow-hidden bg-[#0a0f1c]">
+              <article className="h-full backdrop-blur-md bg-slate-950/40 border border-blue-500/20 rounded-2xl flex flex-col group hover:border-cyan-400/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)] transition-all duration-300 overflow-hidden">
+                <div className="w-full aspect-[4/3] relative overflow-hidden bg-slate-900/80">
                   <img
                     src={cert.image}
                     alt={cert.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-70 group-hover:opacity-100"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                     loading="lazy"
                     decoding="async"
                     width={480}
@@ -64,11 +70,11 @@ const CertificatesSection = () => {
                   <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                 </div>
 
-                <div className="p-5 flex flex-col flex-grow border-t border-blue-900/50">
-                  <h3 className="text-gray-300 font-bold mb-2 group-hover:text-white transition-colors line-clamp-1">
+                <div className="p-5 flex flex-col flex-grow border-t border-blue-500/20">
+                  <h3 className="text-gray-200 font-bold mb-1.5 group-hover:text-cyan-300 transition-colors line-clamp-1">
                     {cert.title}
                   </h3>
-                  <p className="text-[#a0a0a0] font-mono text-xs">{cert.issuer}</p>
+                  <p className="text-blue-300/70 font-mono text-xs">{cert.issuer}</p>
                 </div>
               </article>
             </Reveal>

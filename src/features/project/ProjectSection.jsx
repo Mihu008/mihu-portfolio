@@ -1,6 +1,21 @@
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import { FaJava, FaReact, FaNodeJs, FaGithub, FaDocker } from "react-icons/fa6";
-import { SiJavascript, SiPostgresql, SiSpringboot, SiMongodb, SiMysql, SiPostman, SiNotion } from "react-icons/si";
+import { FaJava, FaReact, FaNodeJs, FaDocker, FaGithub, FaAws } from "react-icons/fa6";
+import { TbBrandFramerMotion } from "react-icons/tb";
+import {
+  SiJavascript,
+  SiPostgresql,
+  SiSpringboot,
+  SiMongodb,
+  SiMysql,
+  SiPostman,
+  SiNextdotjs,
+  SiThreedotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiSupabase,
+  SiVercel,
+  SiRender,
+} from "react-icons/si";
 import Reveal from "../../components/Reveal";
 import nexusImg from "../../assets/optimized/nexus.webp";
 import checklistImg from "../../assets/optimized/Checklist.webp";
@@ -20,115 +35,140 @@ const projects = [
   },
   {
     id: 2,
-    title: "Checklist Delegation System",
-    description: "A multi-layer task delegation engine built for team workflows. Supports hierarchical task assignment, deadline tracking, and role-based access control with JWT-secured REST APIs.",
+    title: "Unified Ecosystem Engine",
+    description:
+      "A high-performance integration platform that consolidates fragmented enterprise systems into a single, synchronized core for real-time data flow and operations.",
     image: checklistImg,
-    liveLink: "#",
-    githubLink: "#",
-    tags: ["Node.js", "React.js", "PostgreSQL", "JWT", "Tailwind", "RBAC"],
+    liveLink: "https://checklist-delegation-app.vercel.app/",
+    githubLink: "https://github.com/Mihu008/checklist-delegation-app",
+    tags: ["React", "Express", "PostgreSQL", "JWT"],
   },
   {
     id: 3,
-    title: "WhatsApp Tracking System",
-    description: "A real-time business tracking system, with features like live tracking, automated messages, and reports.",
+    title: "WhatsApp CRM App",
+    description:
+      "A real-time messaging application mimicking the WhatsApp Web interface. Features WebSocket-based instant messaging, media sharing, and reactive conversation updates.",
     image: whatsappImg,
-    liveLink: "#",
-    githubLink: "#",
-    tags: ["Next.js", "Tailwind", "Supabase", "Meta Business", "Zustand", "Typescript"],
+    liveLink: "https://whatsapp-web-clone-mihu.vercel.app/",
+    githubLink: "https://github.com/Mihu008/whatsapp-web-clone",
+    tags: ["React", "Node.js", "WebSockets", "MongoDB"],
   },
   {
     id: 4,
-    title: "Analytics Dashboard",
-    description: "A real-time data visualization dashboard monitoring key business metrics and user engagement.",
+    title: "NovaQuery - AI SQL Studio",
+    description:
+      "NovaQuery is a modern PostgreSQL workspace that combines a professional SQL IDE with intelligent database analysis, schema exploration, query optimization, automated documentation, and AI-assisted development.",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=75&w=480&auto=format&fit=crop",
     liveLink: "#",
     githubLink: "#",
-    tags: ["D3.js", "Express", "PostgreSQL"],
+    tags: ["Next.js", "Node.js", "PostgreSQL", "TypeScript", "Tailwind"],
   },
 ];
 
 const techStack = [
   { name: "Java", icon: FaJava, color: "#f89820", percentage: "86%" },
   { name: "React", icon: FaReact, color: "#61dafb", percentage: "79%" },
-  { name: "Javascript", icon: SiJavascript, color: "#f7df1e", percentage: "54%" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#ffffff", percentage: "82%" },
+  { name: "TypeScript", icon: SiTypescript, color: "#3178c6", percentage: "80%" },
+  { name: "Javascript", icon: SiJavascript, color: "#f7df1e", percentage: "84%" },
+  { name: "Three.js", icon: SiThreedotjs, color: "#38bdf8", percentage: "78%" },
+  { name: "Tailwind", icon: SiTailwindcss, color: "#06b6d4", percentage: "88%" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "#336791", percentage: "94%" },
   { name: "Spring Boot", icon: SiSpringboot, color: "#6db33f", percentage: "62%" },
+  { name: "Supabase", icon: SiSupabase, color: "#3ecf8e", percentage: "78%" },
   { name: "MongoDB", icon: SiMongodb, color: "#47a248", percentage: "92%" },
   { name: "MySQL", icon: SiMysql, color: "#4479a1", percentage: "76%" },
+  { name: "Docker", icon: FaDocker, color: "#2496ed", percentage: "75%" },
+  { name: "AWS", icon: FaAws, color: "#ff9900", percentage: "73%" },
+  { name: "Vercel", icon: SiVercel, color: "#ffffff", percentage: "85%" },
+  { name: "Render", icon: SiRender, color: "#46e3b7", percentage: "76%" },
+  { name: "GitHub", icon: FaGithub, color: "#ffffff", percentage: "89%" },
+  { name: "Framer Motion", icon: TbBrandFramerMotion, color: "#f43f5e", percentage: "72%" },
   { name: "Postman", icon: SiPostman, color: "#ff6c37", percentage: "81%" },
   { name: "Nodejs", icon: FaNodeJs, color: "#339933", percentage: "63%" },
-  { name: "Notion", icon: SiNotion, color: "#ffffff", percentage: "87%" },
-  { name: "Github", icon: FaGithub, color: "#ffffff", percentage: "85%" },
-  { name: "Docker", icon: FaDocker, color: "#2496ed", percentage: "85%" },
 ];
 
 const ProjectSection = () => {
   return (
     <section
       id="project"
-      className="min-h-screen bg-gradient-to-b from-blue-900 to-black py-24 lg:px-24 md:px-10 px-4 relative overflow-hidden"
+      className="min-h-screen py-24 lg:px-24 md:px-10 px-4 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center">
+        {/* Section Header */}
         <Reveal className="text-center mb-16">
-          <p className="text-gray-500 font-mono mb-4 text-sm md:text-base">
-            &lt;!-- My recent work --&gt;
-          </p>
-          <h2 className="text-white text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight">
-            Featured <span className="text-blue-300">Projects</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs font-mono mb-4">
+            <span className="w-2 h-2 rounded-full bg-cyan-400" />
+            <span>&lt;!-- Featured Work --&gt;</span>
+          </div>
+          <h2 className="text-white text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
+            Featured{" "}
+            <span className="bg-gradient-to-r from-blue-300 via-cyan-200 to-blue-400 bg-clip-text text-transparent">
+              Projects
+            </span>
           </h2>
         </Reveal>
 
+        {/* Project Cards Grid */}
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
           {projects.map((project, index) => (
             <Reveal key={project.id} delay={index * 80} className="h-full">
-              <article className="h-full bg-black/40 md:backdrop-blur-sm border border-blue-900/50 shadow-2xl flex flex-col group hover:border-blue-500/50 transition-colors duration-300 overflow-hidden">
-                <div className="w-full h-48 sm:h-56 relative overflow-hidden bg-[#0a0f1c]">
+              <article className="h-full backdrop-blur-md bg-slate-950/50 border border-blue-500/20 rounded-2xl flex flex-col group hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.18)] transition-all duration-300 overflow-hidden">
+                
+                {/* Image Container */}
+                <div className="w-full h-48 sm:h-56 relative overflow-hidden bg-slate-900/80">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className={`w-full h-full ${project.objectFit || "object-cover"} transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100 lg:group-hover:mix-blend-normal`}
+                    className={`w-full h-full ${project.objectFit || "object-cover"} transition-transform duration-500 group-hover:scale-105 opacity-85 group-hover:opacity-100`}
                     loading="lazy"
                     decoding="async"
                     width={480}
                     height={320}
                   />
 
-                  <div className="absolute inset-0 bg-blue-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6">
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-black/60 text-white hover:text-blue-300 hover:scale-110 transition-transform rounded-full"
-                      title="Live Demo"
-                    >
-                      <FiExternalLink className="w-6 h-6" />
-                    </a>
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-black/60 text-white hover:text-blue-300 hover:scale-110 transition-transform rounded-full"
-                      title="Source Code"
-                    >
-                      <FiGithub className="w-6 h-6" />
-                    </a>
+                  {/* Links Overlay */}
+                  <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-5">
+                    {project.liveLink !== "#" && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-xl bg-blue-500/20 border border-blue-400/40 text-cyan-300 hover:text-white hover:bg-cyan-500/40 hover:scale-110 transition-all duration-300"
+                        title="Live Demo"
+                      >
+                        <FiExternalLink className="w-5 h-5" />
+                      </a>
+                    )}
+                    {project.githubLink !== "#" && (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-xl bg-blue-500/20 border border-blue-400/40 text-cyan-300 hover:text-white hover:bg-cyan-500/40 hover:scale-110 transition-all duration-300"
+                        title="Source Code"
+                      >
+                        <FiGithub className="w-5 h-5" />
+                      </a>
+                    )}
                   </div>
                 </div>
 
+                {/* Card Details */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-white text-xl font-bold mb-3 group-hover:text-blue-200 transition-colors">
+                  <h3 className="text-white text-lg font-bold mb-2.5 group-hover:text-cyan-300 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-blue-100 font-mono text-sm leading-relaxed mb-6 flex-grow">
+                  <p className="text-gray-300/90 font-mono text-xs sm:text-sm leading-relaxed mb-6 flex-grow">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-blue-900/50">
+                  <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-blue-500/20">
                     {project.tags.map((tag, tagIdx) => (
                       <span
                         key={`${project.id}-${tag}-${tagIdx}`}
-                        className="text-xs font-mono text-gray-400 bg-[#111] px-2 py-1 border border-gray-800"
+                        className="text-xs font-mono text-cyan-300 bg-blue-500/10 border border-blue-400/25 px-2.5 py-1 rounded-md"
                       >
                         {tag}
                       </span>
@@ -140,101 +180,98 @@ const ProjectSection = () => {
           ))}
         </div>
 
-        <Reveal className="w-full mt-32 border-t border-blue-900/50 pt-16 flex flex-col gap-16">
-          <p className="text-gray-500 font-mono text-sm md:text-base mb-4">
-            &lt;!-- What I do --&gt;
-          </p>
+        {/* Competencies Section */}
+        <Reveal className="w-full mt-24 backdrop-blur-md bg-slate-950/40 border border-blue-500/20 rounded-3xl p-8 sm:p-12 shadow-[0_0_50px_rgba(5,8,22,0.4)] flex flex-col gap-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs font-mono w-fit">
+            <span className="w-2 h-2 rounded-full bg-cyan-400" />
+            <span>&lt;!-- Engineering Focus --&gt;</span>
+          </div>
 
-          <div className="flex flex-col gap-6">
-            <h3 className="text-white text-2xl font-bold tracking-tight">1. Back-End Development</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8 text-[#a0a0a0] font-mono text-sm md:text-base leading-relaxed">
+          <div className="flex flex-col gap-4">
+            <h3 className="text-white text-xl md:text-2xl font-bold tracking-tight text-cyan-300">
+              1. Back-End Architecture & APIs
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-300 font-mono text-sm leading-relaxed">
               {[
                 "RESTful & GraphQL API Architecture",
-                "Microservices Orchestration & Event-Driven Systems",
+                "Microservices Orchestration & Event Systems",
                 "Database Optimization & Distributed Caching",
-                "Scalable System Design & Low-Latency Processing",
+                "Scalable System Design & Low-Latency Engines",
                 "Security Compliance (OAuth2, JWT, Spring Security)",
                 "Deployment & CI/CD Pipeline Setup",
               ].map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <span className="text-gray-500 mt-1">•</span>
+                <div key={item} className="flex items-start gap-2.5 p-3 rounded-xl bg-blue-500/5 border border-blue-500/10 hover:border-blue-400/30 transition-colors">
+                  <span className="text-cyan-400 font-bold">›</span>
                   <span>{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="flex flex-col gap-6">
-            <h3 className="text-white text-2xl font-bold tracking-tight">2. Front-End Development</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8 text-[#a0a0a0] font-mono text-sm md:text-base leading-relaxed">
+          <div className="flex flex-col gap-4">
+            <h3 className="text-white text-xl md:text-2xl font-bold tracking-tight text-cyan-300">
+              2. Front-End Engineering
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-300 font-mono text-sm leading-relaxed">
               {[
-                "Modern JavaScript (ES6+) & TypeScript",
-                "Reusable Component Design Patterns",
-                "Web animations & transitions",
-                "Core Web Vitals & Frontend Performance Tuning",
-                "State Management (Redux/Zustand) & React Hooks",
-                "Cross-browser compatibility",
+                "Modern JavaScript (ES6+) & React Patterns",
+                "Reusable Component Systems",
+                "Responsive UI Animations & Interactions",
+                "Core Web Vitals & Frontend Performance",
+                "State Management (Zustand/Redux)",
+                "Cross-Browser Compatibility",
               ].map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <span className="text-gray-500 mt-1">•</span>
+                <div key={item} className="flex items-start gap-2.5 p-3 rounded-xl bg-blue-500/5 border border-blue-500/10 hover:border-blue-400/30 transition-colors">
+                  <span className="text-cyan-400 font-bold">›</span>
                   <span>{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="flex flex-col gap-6">
-            <h3 className="text-white text-2xl font-bold tracking-tight">3. Design to Code</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8 text-[#a0a0a0] font-mono text-sm md:text-base leading-relaxed">
-              <div className="flex items-start gap-3">
-                <span className="text-gray-500 mt-1">•</span>
-                <span>Figma → Code Conversion</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-gray-500 mt-1">•</span>
-                <span>SOLID Principles & Clean Architecture</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-gray-500 mt-1">•</span>
-                <span className="border border-[#7e57c2] px-3 py-1 bg-[#2a1a4a]/30 text-blue-100">Server-Side Rendering (SSR) & Next.js Optimization</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-gray-500 mt-1">•</span>
-                <span>Serverless Architecture & Edge Computing Deployment</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-gray-500 mt-1">•</span>
-                <span>
-                  Automated Testing & {" "}
-                  <span className="border-b-2 border-fuchsia-500 text-white pb-0.5">CI/CD Pipelines</span>
-                </span>
-              </div>
+          <div className="flex flex-col gap-4">
+            <h3 className="text-white text-xl md:text-2xl font-bold tracking-tight text-cyan-300">
+              3. Design to Code & Reliability
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-300 font-mono text-sm leading-relaxed">
+              {[
+                "Figma → Code Design Systems",
+                "SOLID Principles & Clean Architecture",
+                "Server-Side Rendering & Edge Computing",
+                "Docker Containerization & Cloud Deployment",
+                "Automated Testing & CI/CD Workflows",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2.5 p-3 rounded-xl bg-blue-500/5 border border-blue-500/10 hover:border-blue-400/30 transition-colors">
+                  <span className="text-cyan-400 font-bold">›</span>
+                  <span>{item}</span>
+                </div>
+              ))}
             </div>
           </div>
         </Reveal>
 
-        <Reveal className="w-full mt-32 border-t border-blue-900/50 pt-16 flex flex-col">
-          <p className="text-gray-500 font-mono text-sm md:text-base mb-10">
-            &lt;!-- My tech stack --&gt;
-          </p>
+        {/* Tech Stack Grid */}
+        <Reveal className="w-full mt-20 flex flex-col items-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs font-mono mb-8">
+            <span className="w-2 h-2 rounded-full bg-cyan-400" />
+            <span>&lt;!-- Core Technologies --&gt;</span>
+          </div>
 
-          <div className="w-full border-t border-l border-blue-900/50 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+          <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {techStack.map((tech, idx) => (
               <div
                 key={`${tech.name}-${idx}`}
-                className="aspect-square p-4 sm:p-6 border-b border-r border-blue-900/50 flex flex-col justify-between group hover:bg-white/5 transition-colors"
+                className="backdrop-blur-md bg-slate-950/40 border border-blue-500/20 rounded-2xl p-5 flex flex-col justify-between group hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all duration-300"
               >
-                <div className="flex justify-start">
-                  <span className="text-gray-400 font-mono text-xs sm:text-sm font-semibold">{tech.name}</span>
+                <div className="flex justify-between items-center mb-3">
+                  <span className="text-gray-200 font-mono text-xs font-semibold">{tech.name}</span>
+                  <span className="text-cyan-300 font-mono text-xs">{tech.percentage}</span>
                 </div>
-                <div className="flex justify-center items-center flex-grow py-4">
+                <div className="flex justify-center items-center py-3">
                   <tech.icon
-                    className="w-12 h-12 sm:w-16 sm:h-16 transition-transform group-hover:scale-110"
+                    className="w-12 h-12 transition-transform group-hover:scale-110"
                     style={{ color: tech.color }}
                   />
-                </div>
-                <div className="flex justify-end">
-                  <span className="text-gray-400 font-mono text-xs sm:text-sm">{tech.percentage}</span>
                 </div>
               </div>
             ))}

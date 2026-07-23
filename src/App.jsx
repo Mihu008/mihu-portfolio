@@ -3,6 +3,7 @@ import Header from "./features/navigation/Header"
 import ScrollToTop from "./features/navigation/ScrollToTop"
 import LazySection from "./components/LazySection"
 import HashScrollHandler from "./components/HashScrollHandler"
+import GlobalBackground3D from "./components/GlobalBackground3D"
 import { SectionMountProvider } from "./context/SectionMountProvider"
 
 const HeroSection = lazy(() => import("./features/home/HeroSection"));
@@ -12,15 +13,18 @@ const CertificatesSection = lazy(() => import("./features/certificates/Certifica
 const ContactSection = lazy(() => import("./features/contact/ContactSection"));
 
 const HeroFallback = () => (
-  <div className="min-h-screen bg-black" aria-hidden="true" />
+  <div className="min-h-screen bg-[#050816]" aria-hidden="true" />
 );
 
 export default function App() {
   return (
     <SectionMountProvider>
       <HashScrollHandler />
+      {/* Global Continuous Three.js 3D Background */}
+      <GlobalBackground3D />
+      
       <Header />
-      <main>
+      <main className="relative z-10">
         <Suspense fallback={<HeroFallback />}>
           <HeroSection />
         </Suspense>

@@ -1,114 +1,148 @@
 import { FiDownload } from "react-icons/fi";
 import { FaLinkedinIn, FaXTwitter, FaInstagram } from "react-icons/fa6";
 import Reveal from "../../components/Reveal";
-import Me from "../../assets/optimized/Me.webp"
-
+import Me from "../../assets/optimized/Me.webp";
 
 const AboutSection = () => {
   return (
     <section
       id="about"
       className="min-h-screen
-        bg-gradient-to-b from-black to-blue-900
         flex items-center justify-center
         lg:px-24 md:px-10 px-4 py-20
         relative
         overflow-hidden"
     >
-      <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-        <Reveal direction="left" className="z-40 w-full flex flex-col items-start">
-          <p className="text-gray-500 font-mono mb-8 text-sm md:text-base">
-            &lt;!-- About me section --&gt;
-          </p>
+      <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        {/* Left Column: Glass Card with About Content */}
+        <Reveal direction="left" className="z-20 w-full">
+          <div className="backdrop-blur-md bg-slate-950/40 border border-blue-500/20 rounded-3xl p-6 sm:p-10 shadow-[0_0_50px_rgba(5,8,22,0.5)] flex flex-col items-start">
+            
+            {/* Section Tag */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs font-mono mb-6">
+              <span className="w-2 h-2 rounded-full bg-cyan-400" />
+              <span>&lt;!-- About Me --&gt;</span>
+            </div>
 
-          <h2 className="text-white text-6xl md:text-[5rem] lg:text-[6rem] font-bold z-10 mb-10 leading-[1.05] tracking-tight">
-            Inside My <br />
-            <span className="text-gray-400">Creative</span> <br />
-            Core
-          </h2>
+            {/* Heading */}
+            <h2 className="text-white text-5xl md:text-6xl font-extrabold mb-8 leading-[1.08] tracking-tight">
+              Inside My <br />
+              <span className="bg-gradient-to-r from-blue-300 via-cyan-200 to-blue-400 bg-clip-text text-transparent">
+                Creative Core
+              </span>
+            </h2>
 
-          <div className="text-[#a0a0a0] font-mono text-base md:text-[17px] mb-12 space-y-8 leading-[1.8] max-w-xl">
-            <p>
-              I&rsquo;m a <span className="bg-[#2a2a1a] text-[#d4d4aa] px-1.5 py-0.5">Frontend & Backend</span>{" "}
-              <span className="bg-[#2a2a1a] text-[#d4d4aa] px-1.5 py-0.5">Developer</span> driven by a passion for
-              building seamless, high-performance digital products. I specialize in crafting responsive, intuitive user
-              interfaces while architecting scalable, efficient backend systems that power reliable applications.
-            </p>
-            <p>
-              I enjoy collaborating with teams, solving real-world problems, and turning complex ideas into clean,
-              engaging UI.
-            </p>
-          </div>
+            {/* Paragraphs */}
+            <div className="text-gray-300 font-mono text-sm sm:text-base mb-8 space-y-6 leading-[1.8]">
+              <p>
+                I&rsquo;m a{" "}
+                <span className="bg-blue-500/15 border border-blue-400/30 text-cyan-300 px-2 py-0.5 rounded-md font-mono text-sm shadow-sm">
+                  Frontend & Backend
+                </span>{" "}
+                <span className="bg-blue-500/15 border border-blue-400/30 text-cyan-300 px-2 py-0.5 rounded-md font-mono text-sm shadow-sm">
+                  Developer
+                </span>{" "}
+                driven by a passion for building seamless, high-performance digital products. I specialize in crafting responsive, intuitive user interfaces while architecting scalable, efficient backend systems that power reliable applications.
+              </p>
+              <p className="text-gray-400">
+                I enjoy collaborating with teams, solving real-world problems, and turning complex ideas into clean, engaging user experiences.
+              </p>
+            </div>
 
-          <a
-            href="/MIHIR_Resume.pdf"
-            download="MIHIR_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-between w-[200px] bg-[#1a1a1a] hover:bg-[#222] text-white font-mono text-sm font-semibold transition-colors border border-gray-800 mb-16 group"
-          >
-            <span className="px-6 py-4">Download CV</span>
-            <span className="bg-[#222] p-4 h-full border-l border-gray-700 flex items-center justify-center group-hover:bg-[#333] transition-colors">
-              <FiDownload className="w-5 h-5" />
-            </span>
-          </a>
+            {/* Download CV CTA */}
+            <a
+              href="/MIHIR_Resume.pdf"
+              download="MIHIR_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-between bg-slate-900/80 hover:bg-slate-800/90 text-blue-200 hover:text-white font-mono text-sm font-semibold transition-all duration-300 border border-blue-500/30 hover:border-cyan-400/50 rounded-xl overflow-hidden mb-10 group shadow-lg shadow-blue-500/10 hover:shadow-cyan-500/20 hover:-translate-y-0.5"
+            >
+              <span className="px-6 py-3.5">Download CV</span>
+              <span className="bg-blue-500/20 p-3.5 border-l border-blue-500/30 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
+                <FiDownload className="w-5 h-5 text-cyan-300" />
+              </span>
+            </a>
 
-          <div className="w-full max-w-xl">
-            <p className="text-gray-500 font-mono mb-6 text-sm md:text-base">
-              &lt;!-- My Professional Experience --&gt;
-            </p>
+            {/* Experience Block */}
+            <div className="w-full pt-6 border-t border-blue-500/20">
+              <p className="text-blue-300/70 font-mono mb-4 text-xs tracking-wider uppercase">
+                &lt;!-- Professional Experience --&gt;
+              </p>
 
-            <div className="flex flex-row gap-8 sm:gap-16 font-mono text-sm md:text-base">
-              <div className="text-[#d4d4aa] flex flex-col">
-                <span>2026 -</span>
-                <span>present</span>
+              <div className="flex flex-row gap-6 sm:gap-12 font-mono text-xs sm:text-sm">
+                <div className="text-cyan-300 font-semibold flex flex-col">
+                  <span>2026 - Feb</span>
+                  <span>2026 - June</span>
+                </div>
+                <div className="text-white flex flex-col font-bold">
+                  <span>Full-Stack Developer Intern</span>
+                </div>
+                <div className="text-gray-400 flex flex-col">
+                  <span>Botivate</span>
+                  <span>Services LLP</span>
+                </div>
               </div>
-              <div className="text-white flex flex-col font-bold">
-                <span>Full-Stack</span>
-                <span>Developer</span>
-                <span>Intern</span>
-              </div>
-              <div className="text-gray-400 flex flex-col">
-                <span>Botivate</span>
-                <span>Services</span>
-                <span>LLP</span>
+              <div className="flex flex-row gap-6 sm:gap-12 font-mono text-xs sm:text-sm">
+                <div className="text-cyan-300 font-semibold flex flex-col">
+                  <span>2026 - July</span>
+                  <span>2026 - Present</span>
+                </div>
+                <div className="text-white flex flex-col font-bold">
+                  <span>Full-Stack Developer</span>
+                </div>
+                <div className="text-gray-400 flex flex-col">
+                  <span>Botivate</span>
+                  <span>Services LLP</span>
+                </div>
               </div>
             </div>
+
           </div>
         </Reveal>
 
-        <Reveal direction="right" delay={120} className="z-40 w-full max-w-[500px] mx-auto lg:mx-0">
-          <div className="w-full flex flex-col shadow-2xl border border-blue-500/30">
-            <div className="w-full aspect-[4/5] bg-[#1e443b] overflow-hidden relative">
+        {/* Right Column: Glass Card with Profile Image */}
+        <Reveal direction="right" delay={120} className="z-20 w-full max-w-[480px] mx-auto lg:mx-0">
+          <div className="w-full flex flex-col backdrop-blur-md bg-slate-950/40 border border-blue-500/30 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(5,8,22,0.6)]">
+            <div className="w-full aspect-[4/5] bg-slate-900/60 overflow-hidden relative">
               <img
                 src={Me}
                 alt="Profile Portrait"
-                className="w-full h-full object-cover opacity-80"
+                className="w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity duration-500"
                 loading="lazy"
                 decoding="async"
                 width={600}
                 height={750}
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
             </div>
 
-            <div className="bg-[#161616] p-6 flex justify-between items-center border-t border-gray-800">
-              <span className="text-gray-400 font-mono text-sm tracking-widest">Follow me:</span>
-              <div className="flex gap-6">
+            <div className="bg-slate-950/90 p-6 flex justify-between items-center border-t border-blue-500/20">
+              <span className="text-blue-300/80 font-mono text-xs tracking-widest uppercase">Follow Me:</span>
+              <div className="flex gap-4">
                 <a
                   href="https://linkedin.com/in/mihirnetam-08m"
-                  className="text-white hover:text-gray-400 transition-colors"
+                  className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-400/20 flex items-center justify-center text-blue-300 hover:text-white hover:border-cyan-400 hover:bg-cyan-500/20 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all duration-300"
                   title="LinkedIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <FaLinkedinIn className="w-5 h-5" />
+                  <FaLinkedinIn className="w-4 h-4" />
                 </a>
-                <a href="#" className="text-white hover:text-gray-400 transition-colors">
-                  <FaXTwitter className="w-5 h-5" />
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-400/20 flex items-center justify-center text-blue-300 hover:text-white hover:border-cyan-400 hover:bg-cyan-500/20 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all duration-300"
+                  title="X (Twitter)"
+                >
+                  <FaXTwitter className="w-4 h-4" />
                 </a>
                 <a
                   href="https://instagram.com/mihu_singh.07?igsh=bjhndjl4bHB2MTVx"
-                  className="text-white hover:text-gray-400 transition-colors"
+                  className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-400/20 flex items-center justify-center text-blue-300 hover:text-white hover:border-cyan-400 hover:bg-cyan-500/20 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all duration-300"
+                  title="Instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <FaInstagram className="w-5 h-5" />
+                  <FaInstagram className="w-4 h-4" />
                 </a>
               </div>
             </div>
