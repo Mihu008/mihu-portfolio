@@ -184,6 +184,18 @@ export default function NeuralSphere({
       onPointerLeave={handlePointerUp}
     >
       <group ref={sphereGroupRef}>
+        {/* Inner Planetary Atmosphere Core */}
+        <mesh scale={radius * 0.75}>
+          <sphereGeometry args={[1, 32, 32]} />
+          <meshBasicMaterial
+            color="#0284c7"
+            transparent
+            opacity={0.16}
+            blending={THREE.AdditiveBlending}
+            wireframe
+          />
+        </mesh>
+
         {/* Connection Lines Mesh */}
         <lineSegments ref={linesRef}>
           <bufferGeometry>
@@ -195,9 +207,9 @@ export default function NeuralSphere({
             />
           </bufferGeometry>
           <lineBasicMaterial
-            color="#78d2ff"
+            color="#38bdf8"
             transparent
-            opacity={0.25}
+            opacity={0.3}
             linewidth={1}
             blending={THREE.AdditiveBlending}
           />

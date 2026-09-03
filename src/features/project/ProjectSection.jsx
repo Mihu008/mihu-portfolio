@@ -96,28 +96,32 @@ const ProjectSection = () => {
       className="min-h-screen py-24 lg:px-24 md:px-10 px-4 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center">
-        {/* Section Header */}
+        {/* Section Header: Mission Catalog */}
         <Reveal className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs font-mono mb-4">
-            <span className="w-2 h-2 rounded-full bg-cyan-400" />
-            <span>&lt;!-- Featured Work --&gt;</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-mono mb-4 shadow-[0_0_15px_rgba(34,211,238,0.15)]">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <span>MISSION CATALOG // CELESTIAL EXPLORATION SYSTEMS</span>
           </div>
-          <h2 className="text-white text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
+          <h2 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
             Featured{" "}
-            <span className="bg-gradient-to-r from-blue-300 via-cyan-200 to-blue-400 bg-clip-text text-transparent">
-              Projects
+            <span className="bg-gradient-to-r from-white via-cyan-100 to-blue-300 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(34,211,238,0.25)]">
+              Orbital Missions
             </span>
           </h2>
         </Reveal>
 
-        {/* Project Cards Grid */}
+        {/* Project Cards Grid (Mission Modules) */}
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
           {projects.map((project, index) => (
             <Reveal key={project.id} delay={index * 80} className="h-full">
-              <article className="h-full backdrop-blur-md bg-slate-950/50 border border-blue-500/20 rounded-2xl flex flex-col group hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.18)] transition-all duration-300 overflow-hidden">
+              <article className="h-full backdrop-blur-xl bg-slate-950/50 border border-cyan-500/25 rounded-2xl flex flex-col group hover:border-cyan-400/60 hover:shadow-[0_0_35px_rgba(34,211,238,0.22)] transition-all duration-300 overflow-hidden">
                 
-                {/* Image Container */}
+                {/* Image Container with Telemetry Header */}
                 <div className="w-full h-48 sm:h-56 relative overflow-hidden bg-slate-900/80">
+                  <div className="absolute top-2 left-3 z-10 px-2 py-0.5 rounded bg-slate-950/80 border border-cyan-500/25 text-[10px] font-mono text-cyan-300 tracking-wider">
+                    MISSION-0{project.id}
+                  </div>
+
                   <img
                     src={project.image}
                     alt={project.title}
@@ -129,14 +133,14 @@ const ProjectSection = () => {
                   />
 
                   {/* Links Overlay */}
-                  <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-5">
+                  <div className="absolute inset-0 bg-slate-950/85 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-5">
                     {project.liveLink !== "#" && (
                       <a
                         href={project.liveLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 rounded-xl bg-blue-500/20 border border-blue-400/40 text-cyan-300 hover:text-white hover:bg-cyan-500/40 hover:scale-110 transition-all duration-300"
-                        title="Live Demo"
+                        className="p-3.5 rounded-xl bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 hover:text-white hover:bg-cyan-500/40 hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(34,211,238,0.3)]"
+                        title="Orbital Live Demo"
                       >
                         <FiExternalLink className="w-5 h-5" />
                       </a>
@@ -146,8 +150,8 @@ const ProjectSection = () => {
                         href={project.githubLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 rounded-xl bg-blue-500/20 border border-blue-400/40 text-cyan-300 hover:text-white hover:bg-cyan-500/40 hover:scale-110 transition-all duration-300"
-                        title="Source Code"
+                        className="p-3.5 rounded-xl bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 hover:text-white hover:bg-cyan-500/40 hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(34,211,238,0.3)]"
+                        title="Flight Source Code"
                       >
                         <FiGithub className="w-5 h-5" />
                       </a>
@@ -157,18 +161,23 @@ const ProjectSection = () => {
 
                 {/* Card Details */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-white text-lg font-bold mb-2.5 group-hover:text-cyan-300 transition-colors">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-white text-lg font-bold group-hover:text-cyan-300 transition-colors">
+                      {project.title}
+                    </h3>
+                    <span className="text-[10px] font-mono text-cyan-400/70 uppercase">
+                      DEPLOYED
+                    </span>
+                  </div>
                   <p className="text-gray-300/90 font-mono text-xs sm:text-sm leading-relaxed mb-6 flex-grow">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-blue-500/20">
+                  <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-cyan-500/20">
                     {project.tags.map((tag, tagIdx) => (
                       <span
                         key={`${project.id}-${tag}-${tagIdx}`}
-                        className="text-xs font-mono text-cyan-300 bg-blue-500/10 border border-blue-400/25 px-2.5 py-1 rounded-md"
+                        className="text-xs font-mono text-cyan-300 bg-cyan-500/10 border border-cyan-400/25 px-2.5 py-1 rounded-md"
                       >
                         {tag}
                       </span>
@@ -180,16 +189,16 @@ const ProjectSection = () => {
           ))}
         </div>
 
-        {/* Competencies Section */}
-        <Reveal className="w-full mt-24 backdrop-blur-md bg-slate-950/40 border border-blue-500/20 rounded-3xl p-8 sm:p-12 shadow-[0_0_50px_rgba(5,8,22,0.4)] flex flex-col gap-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs font-mono w-fit">
+        {/* Competencies Section: Engineering Subsystems */}
+        <Reveal className="w-full mt-24 backdrop-blur-xl bg-slate-950/50 border border-cyan-500/25 rounded-3xl p-8 sm:p-12 shadow-[0_0_60px_rgba(5,8,22,0.7),inset_0_0_20px_rgba(34,211,238,0.03)] flex flex-col gap-12">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-mono w-fit">
             <span className="w-2 h-2 rounded-full bg-cyan-400" />
-            <span>&lt;!-- Engineering Focus --&gt;</span>
+            <span>ENGINEERING SUBSYSTEMS & ARCHITECTURAL CAPABILITIES</span>
           </div>
 
           <div className="flex flex-col gap-4">
             <h3 className="text-white text-xl md:text-2xl font-bold tracking-tight text-cyan-300">
-              1. Back-End Architecture & APIs
+              SUBSYSTEM 01 // Core Propulsion & Back-End Architecture
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-300 font-mono text-sm leading-relaxed">
               {[
@@ -200,7 +209,7 @@ const ProjectSection = () => {
                 "Security Compliance (OAuth2, JWT, Spring Security)",
                 "Deployment & CI/CD Pipeline Setup",
               ].map((item) => (
-                <div key={item} className="flex items-start gap-2.5 p-3 rounded-xl bg-blue-500/5 border border-blue-500/10 hover:border-blue-400/30 transition-colors">
+                <div key={item} className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-cyan-500/15 hover:border-cyan-400/35 transition-colors">
                   <span className="text-cyan-400 font-bold">›</span>
                   <span>{item}</span>
                 </div>
@@ -210,7 +219,7 @@ const ProjectSection = () => {
 
           <div className="flex flex-col gap-4">
             <h3 className="text-white text-xl md:text-2xl font-bold tracking-tight text-cyan-300">
-              2. Front-End Engineering
+              SUBSYSTEM 02 // Guidance Systems & Front-End Engineering
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-300 font-mono text-sm leading-relaxed">
               {[
@@ -221,7 +230,7 @@ const ProjectSection = () => {
                 "State Management (Zustand/Redux)",
                 "Cross-Browser Compatibility",
               ].map((item) => (
-                <div key={item} className="flex items-start gap-2.5 p-3 rounded-xl bg-blue-500/5 border border-blue-500/10 hover:border-blue-400/30 transition-colors">
+                <div key={item} className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-cyan-500/15 hover:border-cyan-400/35 transition-colors">
                   <span className="text-cyan-400 font-bold">›</span>
                   <span>{item}</span>
                 </div>
@@ -231,7 +240,7 @@ const ProjectSection = () => {
 
           <div className="flex flex-col gap-4">
             <h3 className="text-white text-xl md:text-2xl font-bold tracking-tight text-cyan-300">
-              3. Design to Code & Reliability
+              SUBSYSTEM 03 // Structural Reliability & Cloud Operations
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-300 font-mono text-sm leading-relaxed">
               {[
@@ -241,7 +250,7 @@ const ProjectSection = () => {
                 "Docker Containerization & Cloud Deployment",
                 "Automated Testing & CI/CD Workflows",
               ].map((item) => (
-                <div key={item} className="flex items-start gap-2.5 p-3 rounded-xl bg-blue-500/5 border border-blue-500/10 hover:border-blue-400/30 transition-colors">
+                <div key={item} className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-cyan-500/15 hover:border-cyan-400/35 transition-colors">
                   <span className="text-cyan-400 font-bold">›</span>
                   <span>{item}</span>
                 </div>
@@ -250,18 +259,18 @@ const ProjectSection = () => {
           </div>
         </Reveal>
 
-        {/* Tech Stack Grid */}
+        {/* Technology Galaxy (Skills Matrix) */}
         <Reveal className="w-full mt-20 flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs font-mono mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-mono mb-8 shadow-[0_0_15px_rgba(34,211,238,0.15)]">
             <span className="w-2 h-2 rounded-full bg-cyan-400" />
-            <span>&lt;!-- Core Technologies --&gt;</span>
+            <span>TECHNOLOGY GALAXY // ORBITAL NODES MATRIX</span>
           </div>
 
           <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {techStack.map((tech, idx) => (
               <div
                 key={`${tech.name}-${idx}`}
-                className="backdrop-blur-md bg-slate-950/40 border border-blue-500/20 rounded-2xl p-5 flex flex-col justify-between group hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all duration-300"
+                className="backdrop-blur-xl bg-slate-950/50 border border-cyan-500/20 rounded-2xl p-5 flex flex-col justify-between group hover:border-cyan-400/60 hover:shadow-[0_0_25px_rgba(34,211,238,0.2)] transition-all duration-300"
               >
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-gray-200 font-mono text-xs font-semibold">{tech.name}</span>
@@ -269,7 +278,7 @@ const ProjectSection = () => {
                 </div>
                 <div className="flex justify-center items-center py-3">
                   <tech.icon
-                    className="w-12 h-12 transition-transform group-hover:scale-110"
+                    className="w-12 h-12 transition-transform group-hover:scale-110 drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]"
                     style={{ color: tech.color }}
                   />
                 </div>
