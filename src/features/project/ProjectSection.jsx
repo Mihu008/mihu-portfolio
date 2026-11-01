@@ -41,8 +41,8 @@ const projects = [
     description:
       "A high-performance integration platform that consolidates fragmented enterprise systems into a single, synchronized core for real-time data flow and operations.",
     image: orbiaImg,
-    liveLink: "#",
-    githubLink: "#",
+    liveLink: "https://orbia-f-v2.vercel.app",
+    githubLink: "https://github.com/Mihu008/orbia-f-v2",
     tags: ["React", "Express", "PostgreSQL", "JWT"],
   },
   {
