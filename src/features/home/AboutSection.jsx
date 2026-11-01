@@ -17,7 +17,6 @@ const AboutSection = () => {
         {/* Left Column: Planetary Dossier Console */}
         <Reveal direction="left" className="z-20 w-full">
           <div className="backdrop-blur-xl bg-slate-950/50 border border-cyan-500/25 rounded-3xl p-6 sm:p-10 shadow-[0_0_60px_rgba(5,8,22,0.7),inset_0_0_20px_rgba(34,211,238,0.03)] flex flex-col items-start">
-            
             {/* Classification Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-mono mb-6 shadow-[0_0_12px_rgba(34,211,238,0.15)]">
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
@@ -35,12 +34,16 @@ const AboutSection = () => {
             {/* Profile Metrics Grid */}
             <div className="w-full grid grid-cols-2 gap-3 mb-6 p-3 rounded-2xl bg-cyan-500/5 border border-cyan-500/15 text-[11px] font-mono text-cyan-300/90">
               <div>
-                <span className="text-gray-400 block text-[10px]">CLASSIFICATION:</span>
+                <span className="text-gray-400 block text-[10px]">
+                  CLASSIFICATION:
+                </span>
                 <span>Full-Stack Engineering System</span>
               </div>
               <div>
-                <span className="text-gray-400 block text-[10px]">CURRENT STATUS:</span>
-                <span className="text-cyan-300">Active Orbital Deployment</span>
+                <span className="text-gray-400 block text-[10px]">
+                  CURRENT STATUS:
+                </span>
+                <span className="text-cyan-300">Exploring</span>
               </div>
             </div>
 
@@ -51,22 +54,29 @@ const AboutSection = () => {
                 <span className="bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 px-2 py-0.5 rounded-md font-mono text-xs sm:text-sm shadow-sm">
                   Full-Stack Architect
                 </span>{" "}
-                driven by building high-reliability distributed systems and intuitive user interfaces. I specialize in backend orchestration, autonomous agent systems, API pipelines, and resilient production infrastructure.
+                driven by building high-reliability distributed systems and
+                intuitive user interfaces. I specialize in backend
+                orchestration, autonomous agent systems, API pipelines, and
+                resilient production infrastructure.
               </p>
               <p className="text-gray-400 text-xs sm:text-sm">
-                Focusing on architectural correctness, scalable data models, event-driven pipelines, and high-performance interactive interfaces.
+                Focusing on architectural correctness, scalable data models,
+                event-driven pipelines, and high-performance interactive
+                interfaces.
               </p>
             </div>
 
             {/* Download Technical Dossier CTA */}
             <a
-              href="/MIHIR_Resume.pdf"
-              download="MIHIR_Resume.pdf"
+              href="/MIHIR.pdf"
+              download="MIHIR.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-between bg-slate-900/90 hover:bg-slate-800 text-cyan-200 hover:text-white font-mono text-xs sm:text-sm font-semibold transition-all duration-300 border border-cyan-500/30 hover:border-cyan-400/60 rounded-xl overflow-hidden mb-8 group shadow-[0_0_20px_rgba(34,211,238,0.15)] hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] hover:-translate-y-0.5"
             >
-              <span className="px-6 py-3.5 tracking-wider">[ ACCESS DOSSIER // TECHNICAL CV ]</span>
+              <span className="px-6 py-3.5 tracking-wider">
+                [ ACCESS DOSSIER // TECHNICAL CV ]
+              </span>
               <span className="bg-cyan-500/20 p-3.5 border-l border-cyan-500/30 flex items-center justify-center group-hover:bg-cyan-500/40 transition-colors">
                 <FiDownload className="w-4 h-4 text-cyan-300" />
               </span>
@@ -78,24 +88,34 @@ const AboutSection = () => {
                 <p className="text-cyan-300/80 font-mono text-xs tracking-wider uppercase">
                   // MISSION LOGS & ORBITAL DEPLOYMENTS
                 </p>
-                <span className="text-[10px] font-mono text-cyan-400/60">VERIFIED RECORDS</span>
+                <span className="text-[10px] font-mono text-cyan-400/60">
+                  VERIFIED RECORDS
+                </span>
               </div>
 
               <div className="space-y-4 font-mono text-xs sm:text-sm">
                 <div className="p-3 rounded-xl bg-slate-900/60 border border-cyan-500/15 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-cyan-400/30 transition-colors">
                   <div>
-                    <span className="text-white font-bold block">Full-Stack Developer</span>
-                    <span className="text-gray-400 text-xs">Botivate Services LLP · Production Systems</span>
+                    <span className="text-white font-bold block">
+                      Full-Stack Developer
+                    </span>
+                    <span className="text-gray-400 text-xs">
+                      Botivate Services LLP · Production Systems
+                    </span>
                   </div>
                   <span className="text-cyan-300 font-semibold text-xs px-2 py-1 rounded bg-cyan-500/10 w-fit">
-                    2026.07 - PRESENT
+                    2026.07 - 2026.10
                   </span>
                 </div>
 
                 <div className="p-3 rounded-xl bg-slate-900/60 border border-cyan-500/15 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-cyan-400/30 transition-colors">
                   <div>
-                    <span className="text-white font-bold block">Full-Stack Developer Intern</span>
-                    <span className="text-gray-400 text-xs">Botivate Services LLP · Architecture & APIs</span>
+                    <span className="text-white font-bold block">
+                      Full-Stack Developer Intern
+                    </span>
+                    <span className="text-gray-400 text-xs">
+                      Botivate Services LLP · Architecture & APIs
+                    </span>
                   </div>
                   <span className="text-cyan-300/80 font-semibold text-xs px-2 py-1 rounded bg-cyan-500/10 w-fit">
                     2026.02 - 2026.06
@@ -103,14 +123,16 @@ const AboutSection = () => {
                 </div>
               </div>
             </div>
-
           </div>
         </Reveal>
 
         {/* Right Column: Viewport Biometric Frame */}
-        <Reveal direction="right" delay={120} className="z-20 w-full max-w-[480px] mx-auto lg:mx-0">
+        <Reveal
+          direction="right"
+          delay={120}
+          className="z-20 w-full max-w-[480px] mx-auto lg:mx-0"
+        >
           <div className="w-full flex flex-col backdrop-blur-xl bg-slate-950/50 border border-cyan-500/30 rounded-3xl overflow-hidden shadow-[0_0_60px_rgba(5,8,22,0.8),inset_0_0_20px_rgba(34,211,238,0.05)]">
-            
             {/* Viewport HUD Header */}
             <div className="bg-slate-950/90 px-5 py-3 flex justify-between items-center border-b border-cyan-500/20 text-[10px] font-mono text-cyan-400/80">
               <span>VIEWPORT // BIOMETRIC SENSOR</span>
@@ -131,7 +153,7 @@ const AboutSection = () => {
                 height={750}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80" />
-              
+
               {/* Corner HUD Telemetry Marks */}
               <div className="absolute top-4 left-4 text-[10px] font-mono text-cyan-400/60 pointer-events-none">
                 ┌ ENTITY: MIHIR-01

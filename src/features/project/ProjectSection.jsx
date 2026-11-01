@@ -17,6 +17,8 @@ import {
   SiRender,
 } from "react-icons/si";
 import Reveal from "../../components/Reveal";
+import orbiaImg from "../../assets/optimized/orbia.webp";
+import novaqueryImg from "../../assets/optimized/novaquery.webp";
 import nexusImg from "../../assets/optimized/nexus.webp";
 import checklistImg from "../../assets/optimized/Checklist.webp";
 import whatsappImg from "../../assets/optimized/whatsapp.webp";
@@ -35,12 +37,12 @@ const projects = [
   },
   {
     id: 2,
-    title: "Unified Ecosystem Engine",
+    title: "Orbia ERP",
     description:
       "A high-performance integration platform that consolidates fragmented enterprise systems into a single, synchronized core for real-time data flow and operations.",
-    image: checklistImg,
-    liveLink: "https://checklist-delegation-app.vercel.app/",
-    githubLink: "https://github.com/Mihu008/checklist-delegation-app",
+    image: orbiaImg,
+    liveLink: "#",
+    githubLink: "#",
     tags: ["React", "Express", "PostgreSQL", "JWT"],
   },
   {
@@ -58,10 +60,9 @@ const projects = [
     title: "NovaQuery - AI SQL Studio",
     description:
       "NovaQuery is a modern PostgreSQL workspace that combines a professional SQL IDE with intelligent database analysis, schema exploration, query optimization, automated documentation, and AI-assisted development.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=75&w=480&auto=format&fit=crop",
-    liveLink: "#",
-    githubLink: "#",
+    image: novaqueryImg,
+    liveLink: "https://nova-query.vercel.app/",
+    githubLink: "https://github.com/Mihu008/nova-query",
     tags: ["Next.js", "Node.js", "PostgreSQL", "TypeScript", "Tailwind"],
   },
 ];

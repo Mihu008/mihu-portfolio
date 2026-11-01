@@ -4,9 +4,9 @@ import Reveal from "../../components/Reveal";
 
 const ContactSection = () => {
   const contactInfo = [
-    { id: 1, icon: FiBriefcase, label: "FLIGHT EXPERIENCE", text: "4+ years of software engineering & architecture" },
+    { id: 1, icon: FiBriefcase, label: "DEVELOPMENT EXPERIENCE", text: "4+ years of software engineering & architecture" },
     { id: 2, icon: FiMapPin, label: "SECTOR COORDINATES", text: "Rajnandgaon, Chhattisgarh, India" },
-    { id: 3, icon: MdOutlineGTranslate, label: "COMM PROTOCOLS", text: "English, Hindi" },
+    { id: 3, icon: MdOutlineGTranslate, label: "LANGUAGE", text: "English, Hindi" },
     { id: 4, icon: FiMail, label: "DIRECT TRANSMISSION", text: import.meta.env.VITE_EMAIL },
     { id: 5, icon: FiPhone, label: "VOICE FREQUENCY", text: import.meta.env.VITE_PHONE },
   ];
