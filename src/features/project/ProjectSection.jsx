@@ -51,8 +51,8 @@ const projects = [
     description:
       "A real-time messaging application mimicking the WhatsApp Web interface. Features WebSocket-based instant messaging, media sharing, and reactive conversation updates.",
     image: whatsappImg,
-    liveLink: "https://whatsapp-web-clone-mihu.vercel.app/",
-    githubLink: "https://github.com/Mihu008/whatsapp-web-clone",
+    liveLink: "#",
+    githubLink: "#",
     tags: ["React", "Node.js", "WebSockets", "MongoDB"],
   },
   {
